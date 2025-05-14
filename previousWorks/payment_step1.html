@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>줍줍 - 주문/결제 (1단계)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>줍줍</h1>
+            <p>주문/결제</p>
+        </header>
+        <main>
+            <div class="payment-step-indicator">
+                <span class="step active">1. 주문서작성</span> &gt;
+                <span class="step">2. 결제진행</span> &gt;
+                <span class="step">3. 주문완료</span>
+            </div>
+
+            <form action="payment_step2.html" method="get"> {/* 실제로는 POST 방식 및 서버 로직 필요 */}
+                <section class="delivery-info section-box">
+                    <h2>배송지</h2>
+                    <div class="form-group">
+                        <label for="recipient-name">받는 분</label>
+                        <input type="text" id="recipient-name" name="recipientName" value="김줍줍" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-phone">연락처</label>
+                        <input type="tel" id="recipient-phone" name="recipientPhone" value="010-1234-5678" required>
+                    </div>
+                    <div class="form-group address-group">
+                        <label for="recipient-address">주소</label>
+                        <input type="text" id="recipient-zipcode" name="recipientZipcode" placeholder="우편번호" readonly>
+                        <button type="button" class="btn btn-secondary btn-small" onclick="alert('주소검색 기능 구현 필요');">주소검색</button>
+                        <input type="text" id="recipient-address1" name="recipientAddress1" placeholder="기본주소" readonly>
+                        <input type="text" id="recipient-address2" name="recipientAddress2" placeholder="상세주소">
+                    </div>
+                    <div class="form-group">
+                        <label for="delivery-memo">배송메모</label>
+                        <select id="delivery-memo" name="deliveryMemo">
+                            <option value="">배송메모를 선택해주세요</option>
+                            <option value="부재 시 경비실에 맡겨주세요.">부재 시 경비실에 맡겨주세요.</option>
+                            <option value="문 앞에 놓아주세요.">문 앞에 놓아주세요.</option>
+                            <option value="직접 입력">직접 입력</option>
+                        </select>
+                        <input type="text" id="delivery-memo-custom" name="deliveryMemoCustom" placeholder="직접 입력하는 경우 여기에 작성" style="display:none; margin-top: 5px;">
+                    </div>
+                </section>
+
+                <section class="order-product-info section-box">
+                    <h2>주문 상품</h2>
+                    <div class="order-item">
+                        <img src="https://via.placeholder.com/80x80.png?text=상품" alt="상품 이미지">
+                        <div class="item-details">
+                            <p class="item-name">빈티지 데님 자켓</p>
+                            <p class="item-option">색상: 블루 / 사이즈: M</p>
+                            <p class="item-price">35,000원 / 1개</p>
+                        </div>
+                    </div>
+                    {/* 여러 상품일 경우 위 div.order-item 반복 */}
+                </section>
+
+                <section class="payment-amount-summary section-box">
+                    <h2>결제 금액</h2>
+                    <div class="amount-details">
+                        <p><span>총 상품금액</span> <span>35,000원</span></p>
+                        <p><span>배송비</span> <span>+ 3,000원</span></p>
+                        <p class="total"><span>최종 결제금액</span> <span class="final-amount">38,000원</span></p>
+                    </div>
+                </section>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="history.back();">이전으로</button>
+                    <button type="submit" class="btn btn-primary">다음</button>
+                </div>
+            </form>
+        </main>
+        <footer>
+            <p>&copy; 2025 줍줍 (JoopJoop)</p>
+        </footer>
+    </div>
+    <script>
+        // 배송메모 직접입력 처리
+        const deliveryMemoSelect = document.getElementById('delivery-memo');
+        const deliveryMemoCustomInput = document.getElementById('delivery-memo-custom');
+        if(deliveryMemoSelect && deliveryMemoCustomInput) {
+            deliveryMemoSelect.addEventListener('change', function() {
+                if (this.value === '직접 입력') {
+                    deliveryMemoCustomInput.style.display = 'block';
+                    deliveryMemoCustomInput.focus();
+                } else {
+                    deliveryMemoCustomInput.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

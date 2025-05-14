@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>줍줍 - 거래 방법 선택</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="#" class="back-button">&lt;</a>
+        </div>
+
+        <div class="section product-info-section">
+            <p class="section-title">상품 정보 영역</p>
+            <div class="product-details">
+                <div class="product-image-placeholder">
+                    <span>상품 이미지</span>
+                </div>
+                <div class="product-text-details">
+                    <div class="product-name">나이키 반팔 티셔츠</div>
+                    <div class="product-price">500,000 원</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section transaction-method-section">
+            <p class="section-title">거래 방법 선택</p>
+            <div class="method-options">
+                <label class="method-option">
+                    <input type="radio" name="transactionMethod" value="prepaid" checked>
+                    <span class="option-text">선불</span>
+                    <span class="option-price">5,000원</span>
+                    <span class="option-description">(택배 비용 자동 출력)</span>
+                </label>
+                <label class="method-option">
+                    <input type="radio" name="transactionMethod" value="postpaid">
+                    <span class="option-text">착불</span>
+                    <span class="option-description">배송 기사님께 직접 결제</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="payment-summary">
+            <span class="summary-label">결제 예상 금액</span>
+            <span class="summary-amount">505,000원</span>
+        </div>
+
+        <button class="next-button">다음</button>
+    </div>
+</body>
+</html>

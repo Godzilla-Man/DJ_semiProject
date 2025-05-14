@@ -1,0 +1,383 @@
+/* 기본 스타일 초기화 및 폰트 설정 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 상단 정렬을 위해 flex-start 사용 */
+    min-height: 100vh;
+    color: #333; /* 기본 글자 색상 */
+}
+
+.container {
+    width: 100%;
+    max-width: 480px; /* 모바일 화면 기준으로 최대 너비 설정 */
+    background-color: #FFFFFF;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header {
+    position: relative; /* 뒤로가기 버튼의 기준점 */
+    margin-bottom: 20px;
+    height: 40px; /* 뒤로가기 버튼 공간 확보 */
+    display: flex;
+    align-items: center;
+}
+
+.back-button {
+    position: absolute;
+    top: 0;
+    left: 0; /* 이미지와 유사하게 좌측 끝으로 */
+    font-size: 28px; /* 크기 키움 */
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    padding: 5px; /* 클릭 영역 확보 */
+}
+
+.section {
+    background-color: #FFFFFF;
+    border: 1px solid #F0F0F0; /* 매우 옅은 테두리 */
+    border-radius: 12px; /* 둥근 모서리 */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* 은은한 그림자 효과 */
+}
+
+.section-title {
+    font-size: 14px;
+    color: #888; /* 이미지의 "상품 정보 영역", "거래 방법 선택 영역" 텍스트 색상 */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* 상품 정보 영역 */
+.product-info-section .product-details {
+    display: flex;
+    align-items: center;
+}
+
+.product-image-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: #F7F7F7; /* 이미지 자리 표시자 배경 */
+    border: 1px dashed #DDDDDD; /* 이미지 자리 표시자 테두리 */
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    color: #AAAAAA;
+    font-size: 12px;
+}
+
+.product-text-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #555;
+}
+
+/* 거래 방법 선택 영역 */
+.transaction-method-section .method-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.method-option {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #F0F0F0; /* 옵션 간 구분선 */
+}
+
+.method-option:last-child {
+    border-bottom: none; /* 마지막 옵션은 구분선 제거 */
+}
+
+.method-option input[type="radio"] {
+    margin-right: 12px;
+    /* 기본 라디오 버튼 스타일 대신 커스텀 스타일을 원하시면 추가 작업이 필요합니다. */
+    /* 예: accent-color: #0064FF; */
+    transform: scale(1.2); /* 라디오 버튼 약간 크게 */
+}
+
+.method-option .option-text {
+    font-size: 16px;
+    flex-grow: 1; /* 남은 공간을 채우도록 */
+    color: #333;
+}
+
+.method-option .option-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0064FF; /* 가격 강조 */
+    margin-left: 10px;
+}
+
+.method-option .option-description {
+    font-size: 13px;
+    color: #888;
+    margin-left: 10px;
+}
+
+/* 결제 예상 금액 */
+.payment-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5px; /* 영역과 유사한 여백 */
+    margin-top: 10px; /* 위 영역과의 간격 */
+    margin-bottom: 30px;
+}
+
+.summary-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.summary-amount {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000; /* 이미지의 진한 검정색 */
+}
+
+/* 다음 버튼 */
+.next-button {
+    background-color: #0064FF; /* 토스 블루 */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px; /* 둥근 모서리 */
+    padding: 18px 20px; /* 버튼 크기 키움 */
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease; /* 부드러운 색상 변경 효과 */
+}
+
+.next-button:hover {
+    background-color: #0052CC; /* 호버 시 약간 어두운 파란색 */
+}
+
+/* --- style.css (기존 내용에 추가 또는 수정) --- */
+
+/* ... (이전 페이지에서 사용된 .container, .header, .back-button, .section, .section-title 등은 재활용) ... */
+
+/* 결제 흐름 표시기 */
+.payment-flow-indicator {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+}
+.payment-flow-indicator .step {
+    color: #AAAAAA;
+    padding: 0 5px;
+}
+.payment-flow-indicator .current {
+    color: #0064FF; /* 토스 블루 */
+    font-weight: bold;
+}
+
+/* 주문 정보 확인 섹션 */
+.order-summary-section .summary-group {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #F0F0F0;
+}
+.order-summary-section .summary-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.summary-group-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+.summary-group p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 4px;
+    line-height: 1.5;
+}
+.summary-group p strong {
+    color: #333;
+    margin-right: 5px;
+}
+
+/* 주문상품 정보 확인 (작은 이미지 버전) */
+.product-details.small .product-image-placeholder.small-img {
+    width: 60px; /* 이미지 크기 줄임 */
+    height: 60px;
+    font-size: 11px;
+}
+
+/* 결제 수단 선택 영역 */
+.payment-method-selection .method-option {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px; /* 패딩 조정 */
+    cursor: pointer;
+    border: 1px solid #E0E0E0; /* 각 옵션 테두리 */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.payment-method-selection .method-option:hover {
+    border-color: #0064FF;
+    box-shadow: 0 0 0 1px #0064FF;
+}
+.method-option input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.2);
+    accent-color: #0064FF; /* 라디오 버튼 활성 시 색상 */
+}
+.method-option .option-icon { /* 결제수단 아이콘 (자리만 마련) */
+    width: 24px;
+    height: 24px;
+    /* background-image: url('path/to/icon.png'); 예시 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 10px;
+    /* 각 아이콘별 클래스 추가하여 이미지 지정 필요 */
+}
+.method-option .option-text {
+    font-size: 16px;
+    flex-grow: 1;
+    color: #333;
+}
+
+
+/* 최종 결제 금액 (style.css의 .payment-summary 와 유사하지만 약간 다름) */
+.final-summary {
+    border: 1px solid #F0F0F0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #F9F9FA;
+}
+.final-summary .summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+.final-summary .summary-row:last-child {
+    margin-bottom: 0;
+}
+.final-summary .summary-label {
+    color: #555;
+}
+.final-summary .summary-value {
+    color: #333;
+    font-weight: 500;
+}
+.final-summary .summary-row.discount .summary-value {
+    color: #28A745; /* 할인 금액 초록색 */
+}
+.final-summary .summary-row.total {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+}
+.final-summary .summary-row.total .summary-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.final-summary .summary-row.total .summary-amount {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0064FF; /* 토스 블루 */
+}
+
+
+/* 약관 동의 영역 */
+.terms-agreement {
+    margin-bottom: 20px;
+}
+.terms-header {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.terms-header .agree-all-label {
+    font-size: 15px;
+    font-weight: bold;
+    display: flex; /* 체크박스와 텍스트 정렬 */
+    align-items: center;
+}
+.terms-header #agree-all {
+    margin-right: 8px;
+    transform: scale(1.2);
+    accent-color: #0064FF;
+}
+.terms-list {
+    list-style: none;
+    padding-left: 0; /* 기본 들여쓰기 제거 */
+}
+.terms-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 14px;
+}
+.terms-list li label {
+    display: flex; /* 체크박스와 텍스트 정렬 */
+    align-items: center;
+    color: #555;
+}
+.terms-list li input[type="checkbox"].agree-individual {
+    margin-right: 8px;
+    accent-color: #0064FF;
+}
+.view-term-link {
+    font-size: 13px;
+    color: #888;
+    text-decoration: underline;
+}
+
+/* 결제 안내 문구 */
+.payment-notice-text {
+    font-size: 12px;
+    color: #777;
+    background-color: #F9F9FA;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+.payment-notice-text p {
+    margin-bottom: 5px;
+}
+.payment-notice-text p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* 결제 버튼 (기존 .next-button 스타일 재활용 또는 확장) */
+.payment-button {
+    /* .next-button 스타일이 이미 적용되므로, 추가 스타일이 필요하면 여기에 작성 */
+}

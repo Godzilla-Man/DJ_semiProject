@@ -1,0 +1,484 @@
+/* --- style.css (공통 스타일 - 최종) --- */
+
+/* 기본 스타일 초기화 및 폰트 설정 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    padding-bottom: 100px; /* 하단 고정 버튼 영역 확보 */
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+/* --- Header (공통) --- */
+.header {
+    position: relative;
+    margin-bottom: 20px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+/* index.html 헤더 제목 - "중간 공유" 코드에서 .page-title-centered 사용했으므로 통일 */
+.header .page-title-centered { /* index.html 및 index2.html 공통 헤더 제목 */
+    flex-grow: 1;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin-right: 30px; /* 뒤로가기 버튼 너비만큼 오른쪽으로 밀어 제목을 중앙에 오도록 함 */
+}
+
+.back-button {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    padding: 0 5px;
+    line-height: 1;
+}
+
+/* --- 결제 흐름 표시기 (index.html 및 index2.html 공통으로 보이도록) --- */
+.payment-flow-indicator {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 13px;
+}
+.payment-flow-indicator .step {
+    color: #AAAAAA;
+    padding: 0 5px;
+    position: relative;
+    flex: 1;
+}
+.payment-flow-indicator .step:not(:last-child)::after {
+    content: ">";
+    position: absolute;
+    right: -10px;
+    color: #AAAAAA;
+}
+.payment-flow-indicator .current {
+    color: #0064FF;
+    font-weight: bold;
+}
+
+/* --- Sections (공통) --- */
+.section {
+    background-color: #FFFFFF;
+    border: 1px solid #F0F0F0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+/* index.html의 섹션 내 작은 제목 */
+.section .section-title {
+    font-size: 14px;
+    color: #888;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+/* index2.html의 섹션 메인 제목 */
+.section .section-main-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+/* --- index.html 및 index2.html 공통 상품 정보 스타일 --- */
+.product-details { /* index.html 및 index2.html 주문상품 정보 */
+    display: flex;
+    align-items: center;
+}
+.product-image-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: #F7F7F7;
+    border: 1px dashed #DDDDDD;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    color: #AAAAAA;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+/* index2.html 에서는 small 클래스가 없으므로 이 스타일은 더 이상 필요 없을 수 있지만,
+   만약 다른 곳에서 small 이미지를 쓴다면 유지. 현재 index2.html에서는 위와 동일한 크기 사용.
+.product-image-placeholder.small-img {
+    width: 60px;
+    height: 60px;
+    font-size: 11px;
+    margin-right: 15px;
+}
+*/
+.product-text-details {
+    flex-grow: 1;
+}
+.product-text-details .product-name {
+    font-size: 18px; /* index.html, index2.html 동일 크기 */
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+.product-text-details .product-price { /* index.html, index2.html 동일 크기 (수량은 index.html에 없음) */
+    font-size: 16px;
+    color: #555;
+}
+
+
+/* --- index.html (거래 방법 선택 페이지) 스타일 - 픽스! --- */
+.transaction-method-section .method-options {
+    display: flex;
+    flex-direction: column;
+}
+.transaction-method-section .method-option {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #F0F0F0;
+}
+.transaction-method-section .method-option:last-child {
+    border-bottom: none;
+}
+.transaction-method-section .method-option input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.2);
+    accent-color: #0064FF;
+}
+.transaction-method-section .method-option .option-text {
+    font-size: 16px;
+    flex-grow: 1;
+    color: #333;
+}
+.transaction-method-section .method-option .option-price {
+    font-size: 16px;
+    font-weight: bold;    
+    margin-left: 10px;
+    color : #333;
+    
+}
+.transaction-method-section .method-option .option-description {
+    font-size: 13px;
+    color: #888;
+    margin-left: 10px;
+}
+
+.payment-summary { /* index.html 결제 예상 금액 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.payment-summary .summary-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.payment-summary .summary-amount {
+    font-size: 24px;
+    font-weight: bold;
+    color : #333;
+}
+.container > .next-button { /* index.html의 다음 버튼 */
+    background-color: #0064FF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 18px 20px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+.container > .next-button:hover {
+    background-color: #0052CC;
+}
+
+
+/* --- index2.html (결제 진행 페이지) 특정 스타일 --- */
+body.page-index2 .order-summary-section .summary-group {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #F0F0F0;
+}
+body.page-index2 .order-summary-section .summary-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+body.page-index2 .summary-group-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+body.page-index2 .summary-group p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+body.page-index2 .summary-group p strong {
+    color: #333;
+    margin-right: 5px;
+}
+
+/* index2 결제 수단 선택 */
+body.page-index2 .payment-method-selection .method-options {
+    display: flex;
+    flex-direction: column;
+}
+body.page-index2 .payment-method-selection .method-option {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    cursor: pointer;
+    border: 1.5px solid #E0E0E0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: border-color 0.2s ease;
+}
+body.page-index2 .payment-method-selection .method-option.selected {
+    border-color: #0064FF;
+}
+body.page-index2 .payment-method-selection .method-option input[type="radio"] {
+    display: none;
+}
+body.page-index2 .payment-method-selection .payment-logo {
+    height: 24px;
+    margin-right: 10px;
+}
+body.page-index2 .payment-method-selection .option-text {
+    font-size: 16px;
+    font-weight: 500;
+    flex-grow: 1;
+    color: #333;
+}
+
+/* index2 결제 금액 내역 */
+body.page-index2 .simplified-payment-summary {
+    padding: 20px 0; /* 좌우 패딩 제거하여 테두리 없는 느낌 강조 */
+    margin-bottom: 20px;
+}
+body.page-index2 .simplified-payment-summary .summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+body.page-index2 .simplified-payment-summary .summary-label {
+    color: #555555;
+}
+body.page-index2 .simplified-payment-summary .summary-value {
+    color: #333333;
+    font-weight: 500;
+}
+body.page-index2 .simplified-payment-summary .summary-item.discount .summary-value {
+    color: #E53E3E;
+}
+body.page-index2 .summary-divider {
+    border: none;
+    border-top: 1px solid #E5E7EB; /* 이미지 참고 회색 구분선 */
+    margin: 20px 0;
+}
+body.page-index2 .simplified-payment-summary .summary-item.total {
+    margin-top: 15px;
+}
+body.page-index2 .simplified-payment-summary .summary-label.total-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+body.page-index2 .simplified-payment-summary .summary-amount.total-amount {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* index2 약관 동의 - 아코디언 제거, 항상 펼쳐진 상태 */
+body.page-index2 .terms-agreement-accordion { /* 클래스명은 유지하되, 아코디언 기능은 JS에서 제거 */
+    margin-bottom: 20px;
+    border: 1px solid #F0F0F0; /* section과 유사한 테두리 */
+    border-radius: 12px;
+    /* background-color: #FFFFFF; -- section 기본 배경 */
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); -- section 기본 그림자 */
+}
+/* 아코디언 헤더 숨김 */
+body.page-index2 .terms-toggle-header {
+    display: none;
+}
+/* 약관 내용 항상 보이도록 하고 스타일 조정 */
+body.page-index2 .terms-content {
+    display: block !important; /* JavaScript의 display:none 보다 우선 적용 */
+}
+body.page-index2 .terms-agreement-inner {
+    padding: 20px; /* section과 동일한 내부 패딩 */
+    border: none; /* 아코디언 헤더가 없으므로, 내부 컨텐츠 테두리 불필요 */
+    margin-top: 0;
+    border-radius: 12px; /* 전체 영역이 둥글게 */
+}
+body.page-index2 .terms-agreement-inner .terms-header-inner {
+    margin-bottom: 15px; /* 간격 조정 */
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+body.page-index2 .terms-agreement-inner .agree-all-label,
+body.page-index2 .terms-agreement-inner .term-item-label {
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #333;
+}
+body.page-index2 .terms-agreement-inner .agree-all-label {
+    font-weight: bold;
+}
+body.page-index2 .terms-agreement-inner input[type="checkbox"]#agree-all,
+body.page-index2 .terms-agreement-inner input[type="checkbox"].agree-individual {
+    display: none;
+}
+body.page-index2 .checkbox-custom {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid #D1D5DB;
+    border-radius: 6px;
+    margin-right: 10px;
+    position: relative;
+    background-color: #fff;
+    transition: background-color 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+}
+body.page-index2 input[type="checkbox"]:checked + .checkbox-custom {
+    background-color: #0064FF;
+    border-color: #0064FF;
+}
+body.page-index2 input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2.5px 2.5px 0;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+body.page-index2 .terms-agreement-inner .terms-list {
+    list-style: none;
+    padding-left: 0;
+}
+body.page-index2 .terms-agreement-inner .terms-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #F5F5F5;
+}
+body.page-index2 .terms-agreement-inner .terms-list li:last-child {
+    border-bottom: none;
+}
+body.page-index2 .terms-agreement-inner .terms-list li .term-item-label {
+    font-weight: normal;
+    color: #4B5563;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+body.page-index2 .terms-list {
+    list-style-type: none; /* 불렛 포인트(마커) 제거 */
+    padding-left: 0;       /* 기본 패딩 제거 (필요에 따라) */
+    margin-top: 0;        /* 기본 마진 제거 (필요에 따라) */
+    margin-bottom: 0;     /* 기본 마진 제거 (필요에 따라) */
+}
+body.page-index2 .view-term-link {
+    font-size: 13px;
+    color: #6B7280;
+    text-decoration: underline;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+body.page-index2 .view-term-link:hover {
+    color: #0064FF;
+}
+
+/* index2 결제 안내 문구 */
+body.page-index2 .payment-notice-text {
+    font-size: 12px;
+    color: #777;
+    background-color: #F9F9FA;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+body.page-index2 .payment-notice-text p {
+    margin-bottom: 5px;
+}
+body.page-index2 .payment-notice-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- 하단 고정 버튼 (index2.html 전용) --- */
+body.page-index2 .action-buttons-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    padding: 15px 20px;
+    border-top: 1px solid #E0E0E0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+body.page-index2 .action-buttons-fixed > .payment-button {
+    max-width: calc(480px - 40px);
+    width: 100%;
+    background-color: #0064FF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 18px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-sizing: border-box;
+}
+body.page-index2 .action-buttons-fixed > .payment-button:hover {
+    background-color: #0052CC;
+}

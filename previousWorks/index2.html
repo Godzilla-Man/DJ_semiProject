@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>줍줍 - 결제 진행</title>
+    <link rel="stylesheet" href="style3.css"> {/* 이전 페이지와 동일한 CSS 파일 사용 */}
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-button">&lt;</a> {/* 이전 페이지(index.html)로 링크 */}
+            <h1>주문/결제</h1>
+        </div>
+
+        <div class="payment-flow-indicator">
+            <span class="step">1. 정보입력</span>
+            <span class="step current">2. 결제진행</span>
+            <span class="step">3. 주문완료</span>
+        </div>
+
+        <div class="section order-summary-section">
+            <p class="section-title">주문 정보 확인</p>
+            <div class="summary-group">
+                <h3 class="summary-group-title">주문자 정보</h3>
+                <p><strong>이름:</strong> 김줍줍</p>
+                <p><strong>연락처:</strong> 010-1234-5678</p>
+                <p><strong>이메일:</strong> joopjoop@example.com</p>
+            </div>
+            <div class="summary-group">
+                <h3 class="summary-group-title">배송 정보</h3>
+                <p><strong>받는 분:</strong> 김줍줍</p>
+                <p><strong>연락처:</strong> 010-1234-5678</p>
+                <p><strong>주소:</strong> (12345) 서울시 줍줍구 줍줍로 123, 101동 101호</p>
+                <p><strong>배송 요청사항:</strong> 문 앞에 놓아주세요.</p>
+            </div>
+            <div class="summary-group">
+                <h3 class="summary-group-title">주문상품 정보</h3>
+                <div class="product-details small">
+                    <div class="product-image-placeholder small-img">
+                        <span>상품</span>
+                    </div>
+                    <div class="product-text-details">
+                        <div class="product-name">나이키 반팔 티셔츠</div>
+                        <div class="product-price">500,000 원 / 1개</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section payment-method-selection">
+            <p class="section-title">결제수단 선택</p>
+            <div class="method-options">
+                <label class="method-option">
+                    <input type="radio" name="paymentMethod" value="card" checked>
+                    <span class="option-icon card-icon"></span> {/* 아이콘 추가 공간 */}
+                    <span class="option-text">신용/체크카드</span>
+                </label>
+                <label class="method-option">
+                    <input type="radio" name="paymentMethod" value="phone">
+                    <span class="option-icon phone-icon"></span>
+                    <span class="option-text">휴대폰 결제</span>
+                </label>
+                <label class="method-option">
+                    <input type="radio" name="paymentMethod" value="bank">
+                    <span class="option-icon bank-icon"></span>
+                    <span class="option-text">무통장입금 (가상계좌)</span>
+                </label>
+                <label class="method-option">
+                    <input type="radio" name="paymentMethod" value="toss">
+                    <span class="option-icon toss-icon"></span>
+                    <span class="option-text">토스페이</span>
+                </label>
+                {/* --- 추가 결제 수단 예시 ---
+                <label class="method-option">
+                    <input type="radio" name="paymentMethod" value="kakao">
+                    <span class="option-icon kakao-icon"></span>
+                    <span class="option-text">카카오페이</span>
+                </label>
+                <label class="method-option">
+                    <input type="radio" name="paymentMethod" value="naver">
+                    <span class="option-icon naver-icon"></span>
+                    <span class="option-text">네이버페이</span>
+                </label>
+                 -------------------------- */}
+            </div>
+        </div>
+
+        <div class="payment-summary final-summary">
+            <div class="summary-row">
+                <span class="summary-label">총 상품금액</span>
+                <span class="summary-value">500,000원</span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">배송비</span>
+                <span class="summary-value">5,000원</span>
+            </div>
+            <div class="summary-row discount"> {/* 할인 예시 */}
+                <span class="summary-label">포인트 사용</span>
+                <span class="summary-value">- 2,000원</span>
+            </div>
+            <div class="summary-row total">
+                <span class="summary-label">최종 결제금액</span>
+                <span class="summary-amount">503,000원</span>
+            </div>
+        </div>
+
+        <div class="section terms-agreement">
+            <div class="terms-header">
+                <label for="agree-all" class="agree-all-label">
+                    <input type="checkbox" id="agree-all" name="agreeAll">
+                    주문 내용을 확인했으며, 아래 약관에 모두 동의합니다.
+                </label>
+            </div>
+            <ul class="terms-list">
+                <li>
+                    <label><input type="checkbox" name="agreeTermFinancial" class="agree-individual" required> [필수] 전자금융거래 이용약관</label>
+                    <a href="#" class="view-term-link">보기</a>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="agreeTermPersonalInfo" class="agree-individual" required> [필수] 개인정보 수집 및 이용 동의</label>
+                    <a href="#" class="view-term-link">보기</a>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="agreeTermThirdParty" class="agree-individual" required> [필수] 개인정보 제3자 제공 동의</label>
+                    <a href="#" class="view-term-link">보기</a>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="agreeTermMarketing" class="agree-individual"> [선택] 마케팅 정보 수신 동의</label>
+                    <a href="#" class="view-term-link">보기</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="payment-notice-text">
+            <p>• 선택항목에 동의하지 않아도 서비스 이용이 가능합니다. (단, 맞춤형 추천 및 마케팅 정보 수신 불가)</p>
+            <p>• 미성년자가 결제 시 법정대리인이 거래를 취소할 수 있습니다.</p>
+        </div>
+
+
+        <button class="next-button payment-button" type="submit" onclick="alert('PG사 연동 및 실제 결제 처리 로직 구현 필요'); return false;">
+            503,000원 결제하기
+        </button>
+    </div>
+
+    <script>
+        // 약관 전체 동의/해제
+        const agreeAllCheckbox = document.getElementById('agree-all');
+        const individualCheckboxes = document.querySelectorAll('.terms-list .agree-individual');
+
+        if (agreeAllCheckbox) {
+            agreeAllCheckbox.addEventListener('change', function() {
+                individualCheckboxes.forEach(checkbox => {
+                    checkbox.checked = this.checked;
+                });
+            });
+        }
+
+        if (individualCheckboxes) {
+            individualCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    if (!this.checked) {
+                        agreeAllCheckbox.checked = false;
+                    } else {
+                        let allRequiredChecked = true;
+                        individualCheckboxes.forEach(cb => {
+                            if (cb.required && !cb.checked) {
+                                allRequiredChecked = false;
+                            }
+                        });
+                        // 모든 필수 항목이 체크되었는지 여부만으로 전체 동의를 업데이트할지,
+                        // 아니면 모든 항목(선택 포함)이 체크되어야 전체동의를 체크할지는 정책에 따라 결정
+                        // 여기서는 모든 개별 체크박스가 체크되어야 전체동의가 체크되도록 함
+                        let allTrue = true;
+                        individualCheckboxes.forEach(cb => {
+                            if(!cb.checked) allTrue = false;
+                        });
+                        agreeAllCheckbox.checked = allTrue;
+                    }
+                });
+            });
+        }
+
+        // 최종 결제금액 버튼에 표시 (실제로는 동적으로 계산된 값을 넣어야 함)
+        const paymentButton = document.querySelector('.payment-button');
+        const finalAmountSpan = document.querySelector('.final-summary .summary-amount');
+        if(paymentButton && finalAmountSpan) {
+            paymentButton.textContent = finalAmountSpan.textContent + ' 결제하기';
+        }
+    </script>
+</body>
+</html>

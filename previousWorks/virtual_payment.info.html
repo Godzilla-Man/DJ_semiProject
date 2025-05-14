@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>줍줍 - 가상 결제 정보 입력</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>줍줍</h1>
+            <p>가상 결제 정보 입력</p>
+        </header>
+        <main>
+            <section class="product-info-virtual">
+                <h2>구매 예정 상품</h2>
+                <div class="product-item-virtual">
+                    <img src="/example.jpg" alt="상품 이미지" class="product-image-small">
+                    <div class="product-details-virtual">
+                        <p class="product-name-virtual">빈티지 데님 자켓</p>
+                        <p class="product-price-virtual">35,000원</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="virtual-payment-form">
+                <h2>가상 결제 진행</h2>
+                <p>실제 결제가 이루어지지 않는 테스트 단계입니다.</p>
+                <form action="payment_step1.html" method="get"> {/* 실제로는 POST 방식 및 서버 로직 필요 */}
+                    <div class="form-group">
+                        <label for="virtual-password">결제 비밀번호 (가상)</label>
+                        <input type="password" id="virtual-password" name="virtual-password" placeholder="테스트용 비밀번호 입력">
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="use-virtual-money" name="use-virtual-money">
+                        <label for="use-virtual-money">가상머니 5,000원 사용</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">주문서 작성으로 이동</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 줍줍 (JoopJoop)</p>
+        </footer>
+    </div>
+</body>
+</html>

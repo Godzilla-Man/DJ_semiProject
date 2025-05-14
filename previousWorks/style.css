@@ -1,0 +1,325 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+header h1 {
+    color: #0056b3; /* Primary color */
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+h2 {
+    color: #0056b3;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #007bff; /* Accent color */
+    font-size: 1.4em;
+}
+
+.section-box {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.form-group input[type="checkbox"],
+.form-group input[type="radio"] {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.form-group.radio-group label {
+    display: inline-block;
+    font-weight: normal;
+}
+
+
+.address-group input[type="text"] {
+    margin-bottom: 8px;
+}
+.address-group input#recipient-zipcode {
+    width: calc(70% - 5px);
+    margin-right: 5px;
+    display: inline-block;
+}
+.address-group button.btn-small {
+    width: calc(30% - 5px);
+    display: inline-block;
+    padding: 10px; /* Ensure same height as input */
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #545b62;
+}
+.btn-small {
+    font-size: 0.9em;
+    padding: 8px 15px;
+}
+.btn-large {
+    font-size: 1.1em;
+    padding: 12px 25px;
+}
+
+
+.payment-step-indicator {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 0.9em;
+    color: #777;
+}
+.payment-step-indicator .step.active {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Product Info Sections */
+.product-info-virtual,
+.order-product-info,
+.order-product-confirm {
+    /* Styles for product sections */
+}
+
+.product-item-virtual {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.product-image-small {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+.product-details-virtual .product-name-virtual {
+    font-weight: bold;
+}
+.product-details-virtual .product-price-virtual {
+    color: #007bff;
+}
+
+
+.order-item {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+.order-item:last-child {
+    border-bottom: none;
+}
+.order-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+.item-details .item-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.item-details .item-option {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 3px;
+}
+.item-details .item-price {
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* Payment Amount Sections */
+.payment-amount-summary .amount-details p,
+.final-payment-amount .amount-details p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+.payment-amount-summary .amount-details p.total,
+.final-payment-amount .amount-details p.total {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #007bff;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+.payment-amount-summary .final-amount,
+.final-payment-amount .final-amount {
+    color: #d9534f; /* Highlight final amount */
+}
+.final-payment-amount .discount {
+    color: #5cb85c; /* Green for discount */
+}
+
+
+/* Payment Method Section */
+.method-options .form-group {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.method-options .form-group:last-child {
+    border-bottom: none;
+}
+
+/* Terms Agreement Section */
+.terms-agreement .form-group label {
+    display: inline; /* For checkbox and label on same line */
+}
+.terms-agreement .form-group b {
+    font-size: 1.05em;
+}
+.terms-list {
+    list-style: none;
+    padding-left: 20px; /* Indent individual terms */
+    margin-top: 10px;
+}
+.terms-list li {
+    margin-bottom: 8px;
+}
+.terms-list .view-term {
+    font-size: 0.85em;
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.terms-list .view-term:hover {
+    text-decoration: underline;
+}
+
+.payment-notice {
+    font-size: 0.85em;
+    color: #666;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+}
+
+.form-actions {
+    margin-top: 30px;
+    text-align: center;
+}
+.form-actions .btn {
+    margin: 0 10px;
+}
+.form-actions .btn-primary {
+    min-width: 150px;
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Responsive Adjustments (Optional Basic Example) */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="tel"],
+    .form-group input[type="email"],
+    .form-group input[type="password"],
+    .form-group select {
+        font-size: 0.95em;
+    }
+    .btn {
+        padding: 12px 15px; /* Slightly larger buttons on mobile for easier tapping */
+        font-size: 0.95em;
+    }
+    .address-group input#recipient-zipcode,
+    .address-group button.btn-small {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 8px;
+        display: block;
+    }
+}
