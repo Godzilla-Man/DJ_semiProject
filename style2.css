@@ -31,16 +31,14 @@ body {
     display: flex;
     align-items: center;
 }
-/* index.html 및 index2.html 공통 헤더 제목 스타일 */
 .header .page-title-centered {
     flex-grow: 1;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
     color: #000000;
-    margin-right: 30px; /* 뒤로가기 버튼 너비만큼 오른쪽으로 밀어 제목을 중앙에 오도록 함 */
+    margin-right: 30px;
 }
-
 .back-button {
     position: absolute;
     top: 50%;
@@ -54,7 +52,7 @@ body {
     line-height: 1;
 }
 
-/* --- 결제 흐름 표시기 (index.html 및 index2.html 공통으로 보이도록) --- */
+/* --- 결제 흐름 표시기 (index.html 및 index2.html 공통, index3.html에도 적용) --- */
 .payment-flow-indicator {
     display: flex;
     justify-content: space-around;
@@ -96,7 +94,7 @@ body {
     margin-top: 0;
     margin-bottom: 15px;
 }
-.section .section-main-title { /* index2.html 용 */
+.section .section-main-title { /* index2.html 및 index3.html 용 */
     font-size: 18px;
     font-weight: bold;
     color: #000;
@@ -104,7 +102,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* --- index.html 및 index2.html 공통 상품 정보 스타일 --- */
+/* --- index.html 및 index2.html 공통 상품 정보 스타일 (index3.html에서도 일부 재활용) --- */
 .product-details {
     display: flex;
     align-items: center;
@@ -232,10 +230,9 @@ body.page-index2 .summary-group p {
     color: #555;
     margin-bottom: 6px;
     line-height: 1.5;
-    font-weight: 300; /* 배송 정보 글씨 얇게 */
+    font-weight: 300;
 }
 
-/* index2 결제 수단 선택 */
 body.page-index2 .payment-method-selection .method-options {
     display: flex;
     flex-direction: column;
@@ -267,16 +264,11 @@ body.page-index2 .payment-method-selection .option-text {
     color: #333;
 }
 
-/* index2 결제 금액 내역 - 박스 형태로 수정 */
-body.page-index2 .simplified-payment-summary {
-    background-color: #FFFFFF;
-    border: 1px solid #F0F0F0;
-    border-radius: 12px;
-    padding: 20px;
-    /* margin-bottom: 50px; -- 이전 값, 아래 terms-header-inner의 margin-top으로 간격 조절 */
-    margin-bottom: 0; /* terms-header-inner 와의 간격을 위해 0으로 변경 */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+body.page-index2 .simplified-payment-summary { /* index2 결제 금액 내역 (박스 없는 버전) */
+    padding: 20px 0;
+    margin-bottom: 20px; /* 간격 조정: simplified-payment-summary 와 terms-header-inner 사이 */
 }
+/* body.page-index2 .simplified-payment-summary-boxed { -- 이전 박스형태, 현재는 .simplified-payment-summary를 박스 없는 형태로 사용 */
 body.page-index2 .simplified-payment-summary .summary-item {
     display: flex;
     justify-content: space-between;
@@ -315,14 +307,13 @@ body.page-index2 .simplified-payment-summary .summary-amount.total-amount {
     color: #0064FF;
 }
 
-/* index2 약관 동의 - 박스 없이, 텍스트 스타일 변경, 밑줄 및 구분선 제거, 간격 조정 */
 body.page-index2 .terms-header-inner {
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #f0f0f0;
     padding-left: 0;
     padding-right: 0;
-    margin-top: 40px; /* simplified-payment-summary 와의 간격 (아래 terms-list의 margin-bottom과 동일하게) */
+    margin-top: 20px; /* simplified-payment-summary 와의 간격, terms-list의 margin-bottom과 동일하게 */
 }
 body.page-index2 .terms-header-inner .agree-all-label {
     font-size: 17px;
@@ -340,12 +331,11 @@ body.page-index2 .terms-list li .term-item-label input[type="checkbox"] {
     accent-color: #0064FF;
     cursor: pointer;
 }
-
 body.page-index2 .terms-list {
     list-style-type: none;
     padding-left: 0;
     margin-top: 0;
-    margin-bottom: 20px; /* payment-notice-text 와의 간격 (이것이 기준 간격) */
+    margin-bottom: 20px;
 }
 body.page-index2 .terms-list li {
     display: flex;
@@ -378,11 +368,10 @@ body.page-index2 .view-term-link:hover {
     color: #0064FF;
 }
 
-/* index2 결제 안내 문구 - 얇은 글씨체 적용 */
 body.page-index2 .payment-notice-text {
     font-size: 12px;
     color: #777;
-    padding: 0px 0; /* 위아래 여백, 좌우는 0 */
+    padding: 0px 0;
     margin-bottom: 20px;
     line-height: 1.6;
     font-weight: 300;
@@ -394,7 +383,6 @@ body.page-index2 .payment-notice-text p:last-child {
     margin-bottom: 0;
 }
 
-/* --- 하단 고정 버튼 (index2.html 전용) --- */
 body.page-index2 .action-buttons-fixed {
     position: fixed;
     bottom: 0;
@@ -425,4 +413,109 @@ body.page-index2 .action-buttons-fixed > .payment-button:hover {
     background-color: #0052CC;
 }
 
+/* --- index3.html (결제 완료 페이지) 특정 스타일 --- */
+body.page-index3 .page-main-title-area {
+    text-align: center;
+    margin-bottom: 20px; /* 헤더가 없으므로, 이전 .header의 margin-bottom과 유사하게 */
+    padding-top: 10px;
+}
+body.page-index3 .page-main-title-area .main-title {
+    font-size: 24px; /* 결제 완료 타이틀 크기 */
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 5px;
+}
+body.page-index3 .page-main-title-area .sub-title {
+    font-size: 14px; /* 부제목 크기 */
+    color: #555;
+}
 
+body.page-index3 .order-thank-you-message { /* image_85314f.png 상단 영역 */
+    /* .section 스타일 기본 적용 */
+    text-align: center; /* 내부 텍스트 중앙 정렬 */
+}
+body.page-index3 .order-thank-you-message h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0064FF; /* 토스 블루 */
+    margin-bottom: 8px;
+}
+body.page-index3 .order-thank-you-message p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
+body.page-index3 .order-completed-summary .info-row { /* 주문번호, 주문일자 행 */
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    padding: 5px 0; /* 약간의 내부 여백 */
+}
+body.page-index3 .order-completed-summary .info-row .label {
+    color: #555;
+}
+body.page-index3 .order-completed-summary .info-row .value.order-number {
+    font-weight: bold;
+}
+body.page-index3 .content-divider { /* 구분선 */
+    border: none;
+    border-top: 1px solid #F0F0F0;
+    margin: 15px 0;
+}
+body.page-index3 .order-completed-summary .product-details { /* 상품 정보는 공통 스타일 사용 */
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+body.page-index3 .review-button-style { /* "거래 후기 작성하기" 버튼 */
+    background-color: #FFFFFF;
+    color: #0064FF; /* 토스 블루 */
+    border: 1.5px solid #0064FF;
+    border-radius: 8px;
+    padding: 12px 20px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+body.page-index2 .review-button-style:hover {
+    background-color: #f0f8ff; /* Light blue hover */
+}
+
+
+body.page-index3 .payment-info-completed .simplified-payment-summary.no-box-styling {
+    /* simplified-payment-summary의 테두리, 배경, 그림자 제거 */
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0; /* 내부 패딩 제거 (필요시 섹션 패딩 활용) */
+    margin-bottom: 0; /* 섹션 내부이므로 마진 제거 */
+}
+/* .simplified-payment-summary 내부 스타일은 기존 것 사용 */
+
+
+body.page-index3 .transaction-info-completed .info-group {
+    font-size: 14px;
+}
+body.page-index3 .transaction-info-completed .info-row {
+    display: flex;
+    margin-bottom: 8px;
+}
+body.page-index3 .transaction-info-completed .info-row .label {
+    width: 90px; /* 레이블 너비 고정 */
+    color: #555;
+    font-weight: 500;
+    flex-shrink: 0; /* 너비 줄어들지 않도록 */
+}
+body.page-index3 .transaction-info-completed .info-row .value {
+    color: #333;
+    flex-grow: 1;
+}
+body.page-index3 .transaction-info-completed .info-row.address-row .value {
+    line-height: 1.5; /* 주소 여러 줄일 경우 */
+}
+
+/* 하단 고정 버튼은 index2와 동일한 .action-buttons-fixed 와 .payment-button 사용 */
